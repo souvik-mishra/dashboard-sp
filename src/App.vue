@@ -1,60 +1,45 @@
 <template>
-  <div class="App">
-    <header class="App-header">
-      <img src="/logo.svg" class="App-logo" alt="logo" />
-      <p>
-        Edits
-        <code>src/App.vue</code> and save to reload.
-      </p>
-      <a
-        class="App-link"
-        href="https://vuejs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >{{ message }}</a>
-    </header>
+  <div id="app">
+    <header class="app-header">
+      <img class="app-header__img" alt="Vue logo" src="./assets/logo.png">
+      <span class="app-header__title">My Dashboard</span>
+    </header>    
+    <task-list msg="Here are your tasks"/>
   </div>
 </template>
 
 <script>
+import TaskList from './components/TaskList.vue'
+
 export default {
-  data() {
-    return {
-      message: "Learn Vue"
-    };
+  name: 'App',
+  components: {
+    TaskList
   }
-};
+}
 </script>
 
 <style>
-.App {
+body{
+  height: 97.5vh;
+}
+#app {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #2c3e50;
 }
-.App-header {
-  background-color: #f9f6f6;
-  color: #32485f;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app-header {
+  text-align: start;
+  background: #e8fae6;
+  padding: 12px;  
+  color: rgb(29, 95, 29);
 }
-.App-link {
-  color: #00c185;
+.app-header__title {
+  font-size: 3.2rem;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  margin-bottom: 1rem;
-  animation: App-logo-spin infinite 1.6s ease-in-out alternate;
-}
-@keyframes App-logo-spin {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.06);
-  }
+.app-header__img {
+  height: 40px;
 }
 </style>
